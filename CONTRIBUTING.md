@@ -14,8 +14,23 @@ Always include disqualifiers; a profile without them is too loose to triage agai
 ## Improve the framework
 
 The calibration loop, the triage logic, and the search grammar are the parts most worth
-sharpening. If you change how something works, update `framework/curation-logic.md` so
-the reasoning stays in sync with the mechanics.
+sharpening. If you change how something works, update
+[`framework/curation-logic.md`](framework/curation-logic.md) so the reasoning stays in
+sync with the mechanics.
+
+## Use the glossary's terms
+
+[`framework/glossary.md`](framework/glossary.md) fixes one term per concept — *lane*,
+*beat*, *commit boundary*, *signature*, *disqualifier*, *calibration*. Several docs
+describe the same machinery from different angles, so a term that drifts in one place
+quietly contradicts another. If you introduce or rename a concept, update the glossary in
+the same PR.
+
+One exception, and it's deliberate:
+[`framework/project-instructions.md`](framework/project-instructions.md) is self-contained
+because it gets pasted into a Claude project alone, with no access to this repo. What it
+restates from other docs is load-bearing duplication — don't replace it with a
+cross-reference.
 
 ## Keep the tone honest
 

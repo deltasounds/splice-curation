@@ -124,6 +124,7 @@ framework/
   project-instructions.md     ← paste this into your Claude project (the engine)
   curation-logic.md           ← the reasoning, for anyone forking it
   profile-format.md           ← the profile format + a worked example
+  glossary.md                 ← one term per concept; the reference docs conform to
   compatibility.md            ← notes on the beta connector
 examples/
   session-walkthrough.md      ← a full session, end to end

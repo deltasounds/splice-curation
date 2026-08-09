@@ -11,14 +11,16 @@ taste file, out of the public repo.
 ## Fields
 
 ```
-Name:          A short handle you'll reuse ("punchy analog kick").
-Function:      The category (kick, snare, texture, vocal loop, …).
-Signature:     The vibe, in a sentence or two. What it feels like.
-Includes:      The positive descriptors that should be present.
-Disqualifiers: What rules a result OUT. Required — a profile without these is too loose.
-Constraints:   Optional. BPM range, key, one-shot/loop, duration, dry/wet, acoustic/synthetic.
-Default lane:  trusted or review.
-Notes:         Anything else — references, evolution over time, calibration verdicts.
+Name:           A short handle you'll reuse ("punchy analog kick").
+Function:       The category (kick, snare, texture, vocal loop, …).
+Signature:      The vibe, in a sentence or two. What it feels like.
+Includes:       The positive descriptors that should be present.
+Disqualifiers:  What rules a result OUT. Required — a profile without these is too loose.
+Constraints:    Optional. BPM range, key, one-shot/loop, duration, dry/wet, acoustic/synthetic.
+Transformation: How much the sound affords being changed: high / medium / low.
+Good for:       The specific moves it supports — slicing, repitching, granulation, layering.
+Default lane:   trusted or review.
+Notes:          Anything else — references, evolution over time, calibration verdicts.
 ```
 
 ## Guidance
@@ -30,20 +32,28 @@ Notes:         Anything else — references, evolution over time, calibration ve
 - **Default lane is a starting point, not a rule.** You override it per session.
 - **Let the Notes field grow.** This is where calibration verdicts accumulate before
   they get folded into Includes/Disqualifiers.
+- **Transformation and Good for are about affordance, not preference.** They answer "what
+  could this become?" rather than "do I like it?" A sound you love that affords nothing
+  is a worse buy than an unremarkable one you can cut five ways. Splitting affordance out
+  from taste stops a strong Includes list from justifying a purchase on its own.
+- **Low transformation isn't a strike.** It means the sound arrives ready to use, which
+  changes how many you need — a handful of excellent ones, not a category to fill.
 
 ## Worked example (generic)
 
 ```
-Name:          Punchy analog kick
-Function:      Kick (one-shot)
-Signature:     Tight, weighty, hardware-flavored. Hits once and gets out of the way.
-Includes:      Fast transient, controlled low end (roughly 60–90 Hz weight),
-               short decay, a little analog grit.
-Disqualifiers: Long boomy tails, sub-only "felt not heard" kicks, over-processed /
-               heavily distorted, obviously sample-pack-generic.
-Constraints:   one-shot; dry preferred.
-Default lane:  trusted
-Notes:         Good candidate for batch approval once a couple of searches confirm the read.
+Name:           Punchy analog kick
+Function:       Kick (one-shot)
+Signature:      Tight, weighty, hardware-flavored. Hits once and gets out of the way.
+Includes:       Fast transient, controlled low end (roughly 60–90 Hz weight),
+                short decay, a little analog grit.
+Disqualifiers:  Long boomy tails, sub-only "felt not heard" kicks, over-processed /
+                heavily distorted, obviously sample-pack-generic.
+Constraints:    one-shot; dry preferred.
+Transformation: medium
+Good for:       layering, transient replacement, sampler kits
+Default lane:   trusted
+Notes:          Good candidate for batch approval once a couple of searches confirm the read.
 ```
 
-See `examples/profiles/` for more.
+See [`examples/profiles/`](../examples/profiles/) for more.
