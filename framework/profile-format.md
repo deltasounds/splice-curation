@@ -56,4 +56,6 @@ Default lane:   trusted
 Notes:          Good candidate for batch approval once a couple of searches confirm the read.
 ```
 
-See [`examples/profiles/`](../examples/profiles/) for more.
+See [`examples/profiles/`](../examples/profiles/) for more, and
+[`examples/worked-taste-file.md`](../examples/worked-taste-file.md) for a full taste file
+built from these fields.

@@ -59,6 +59,8 @@ material for you and anyone forking it. None of it needs to reach Claude.
 4. **Write your taste file.** Copy [`personal/my-taste.example.md`](personal/my-taste.example.md) to `personal/my-taste.md`
    and fill in one signature and one profile using [`framework/profile-format.md`](framework/profile-format.md). Starting
    from the generic examples in [`examples/profiles/`](examples/profiles/) is fine.
+   [`examples/worked-taste-file.md`](examples/worked-taste-file.md) shows what a
+   developed one looks like — read it for shape, then write your own.
 5. **Upload that taste file to the project's knowledge.** This step is what makes your
    profiles visible to Claude — without it you have a well-written file that nothing
    reads. (Pasting the profiles into the custom instructions below the engine works too;
@@ -128,6 +130,7 @@ framework/
   compatibility.md            ← notes on the beta connector
 examples/
   session-walkthrough.md      ← a full session, end to end
+  worked-taste-file.md        ← a developed taste file, shown for shape (don't adopt it)
   profiles/                   ← generic, transferable profile examples
 personal/
   my-taste.example.md         ← template for your private taste file
