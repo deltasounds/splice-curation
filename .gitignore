@@ -1,0 +1,11 @@
+# Your private taste layer — the filled-in version stays local.
+personal/*
+!personal/*.example.md
+
+# macOS
+.DS_Store
+
+# Editor / local scratch
+.vscode/
+.idea/
+*.swp
