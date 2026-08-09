@@ -20,21 +20,51 @@ it goes unused. If that's you, this gets your credits usable again.
 > by feel → triage → audition → confirm → download) rather than specific tool behavior,
 > so it should survive updates. See `framework/compatibility.md`.
 
+## How this repo relates to Claude
+
+**Claude never reads this repo.** There's no clone step, no sync, no integration. These
+files are text you copy into a Claude project **once, by hand**. The repo exists to
+version the framework and share it; the running system lives in your Claude project.
+
+Two files make the round trip:
+
+| This repo | Goes where | What it does |
+|---|---|---|
+| `framework/project-instructions.md` | The project's **custom instructions** | The engine — the grammar, lanes, commit boundary, six-beat arc |
+| your filled-in taste file | The project's **knowledge** (uploaded file) | Your signatures and profiles — the thing Claude searches *from* |
+
+Everything else here — the logic doc, the profile format, the examples — is reference
+material for you and anyone forking it. None of it needs to reach Claude.
+
+## Before you start
+
+- An **active Splice subscription with credits** on the account you connect.
+- A **paid Claude plan** — projects and connectors aren't on the free tier.
+
 ## Zero to first download
 
-1. **Enable the Splice connector** in Claude. Splice's own setup guide is the source of
-   truth for the connector URL and login:
+1. **Enable the Splice connector** in Claude, under Settings → Connectors. Splice's own
+   setup guide is the source of truth for the connector URL and login:
    https://splice.com/tools/mcp-server
 2. **Create a dedicated Claude project** for this (not just a chat thread — the project
    is what makes your setup persist).
-3. **Paste `framework/project-instructions.md`** into the project's instructions. That's
-   the engine.
-4. **Add a profile or two.** Copy `personal/my-taste.example.md` to a private file and
-   fill in one signature and one profile using `framework/profile-format.md`. You can
-   start with the generic examples in `examples/profiles/`.
-5. **Run one session.** Tell the project what you want — e.g. *"twenty punchy kicks"* —
-   and it walks you through the six-beat arc, confirming the exact files and credit cost
-   before anything is spent.
+3. **Paste `framework/project-instructions.md`** into the project's custom instructions.
+   That's the engine.
+4. **Write your taste file.** Copy `personal/my-taste.example.md` to `personal/my-taste.md`
+   and fill in one signature and one profile using `framework/profile-format.md`. Starting
+   from the generic examples in `examples/profiles/` is fine.
+5. **Upload that taste file to the project's knowledge.** This step is what makes your
+   profiles visible to Claude — without it you have a well-written file that nothing
+   reads. (Pasting the profiles into the custom instructions below the engine works too;
+   uploading keeps them easier to revise as calibration sharpens them.)
+6. **Run one session.** In that project, tell it what you want — e.g. *"twenty punchy
+   kicks"* — and it walks you through the six-beat arc, confirming the exact files and
+   credit cost before anything is spent.
+
+New to the flow? `examples/session-walkthrough.md` shows a full session end to end.
+
+Whenever you revise your taste file, **re-upload it** — the project holds a copy, not a
+live link. Same for the engine if you change it.
 
 That's it. You're curating.
 
@@ -70,6 +100,12 @@ the ears.
   rename → organize → deduplicate → manifest. Splice describes using Claude Cowork to
   scan and organize a local library, so this is real but not guaranteed everywhere.
 
+**Do you have post-processing?** Quick test: ask your project to list the files in your
+samples folder. If it can read the folder, you have it — turn on renaming, filing, and
+the manifest. If it can't, you're on the required core: Splice downloads to its normal
+location and you file by hand. The framework degrades gracefully either way; nothing
+breaks, you just do the filing yourself.
+
 ## Repo layout
 
 ```
@@ -82,9 +118,12 @@ framework/
   profile-format.md           ← the profile format + a worked example
   compatibility.md            ← notes on the beta connector
 examples/
+  session-walkthrough.md      ← a full session, end to end
   profiles/                   ← generic, transferable profile examples
 personal/
-  my-taste.example.md         ← template for your private taste file (keep yours out of git)
+  my-taste.example.md         ← template for your private taste file
+                                 (your filled-in my-taste.md is gitignored — that's why
+                                  this folder looks near-empty here)
 ```
 
 ## Licence
