@@ -9,6 +9,12 @@ The idea in one line: **human taste, accelerated mechanics.** You stay the curat
 The framework accelerates everything around your judgment — searching, triaging,
 tracking, filing — without ever bulk-dumping samples you don't want.
 
+📖 **Want the reasoning rather than the setup?** Read
+**[How the curation logic works](framework/curation-logic.md)** — why taste needs
+disqualifiers, why "trusted" never means "no review", and why a curation system that
+doesn't learn from its own verdicts stays as good as its first draft forever. That's the
+part worth stealing even if you never touch Splice.
+
 ## Who this is for
 
 Anyone sitting on a pile of Splice credits who finds the one-at-a-time download flow too
@@ -18,7 +24,7 @@ it goes unused. If that's you, this gets your credits usable again.
 > **Note on the Splice connector:** it's officially provided by Splice and currently in
 > beta, so its exact tools may change. This framework is written around *intent* (search
 > by feel → triage → audition → confirm → download) rather than specific tool behavior,
-> so it should survive updates. See `framework/compatibility.md`.
+> so it should survive updates. See [`framework/compatibility.md`](framework/compatibility.md).
 
 ## How this repo relates to Claude
 
@@ -30,7 +36,7 @@ Two files make the round trip:
 
 | This repo | Goes where | What it does |
 |---|---|---|
-| `framework/project-instructions.md` | The project's **custom instructions** | The engine — the grammar, lanes, commit boundary, six-beat arc |
+| [`framework/project-instructions.md`](framework/project-instructions.md) | The project's **custom instructions** | The engine — the grammar, lanes, commit boundary, six-beat arc |
 | your filled-in taste file | The project's **knowledge** (uploaded file) | Your signatures and profiles — the thing Claude searches *from* |
 
 Everything else here — the logic doc, the profile format, the examples — is reference
@@ -48,11 +54,11 @@ material for you and anyone forking it. None of it needs to reach Claude.
    https://splice.com/tools/mcp-server
 2. **Create a dedicated Claude project** for this (not just a chat thread — the project
    is what makes your setup persist).
-3. **Paste `framework/project-instructions.md`** into the project's custom instructions.
+3. **Paste [`framework/project-instructions.md`](framework/project-instructions.md)** into the project's custom instructions.
    That's the engine.
-4. **Write your taste file.** Copy `personal/my-taste.example.md` to `personal/my-taste.md`
-   and fill in one signature and one profile using `framework/profile-format.md`. Starting
-   from the generic examples in `examples/profiles/` is fine.
+4. **Write your taste file.** Copy [`personal/my-taste.example.md`](personal/my-taste.example.md) to `personal/my-taste.md`
+   and fill in one signature and one profile using [`framework/profile-format.md`](framework/profile-format.md). Starting
+   from the generic examples in [`examples/profiles/`](examples/profiles/) is fine.
 5. **Upload that taste file to the project's knowledge.** This step is what makes your
    profiles visible to Claude — without it you have a well-written file that nothing
    reads. (Pasting the profiles into the custom instructions below the engine works too;
@@ -61,7 +67,8 @@ material for you and anyone forking it. None of it needs to reach Claude.
    kicks"* — and it walks you through the six-beat arc, confirming the exact files and
    credit cost before anything is spent.
 
-New to the flow? `examples/session-walkthrough.md` shows a full session end to end.
+New to the flow? **[Walk through a full session](examples/session-walkthrough.md)** — the
+six beats end to end, including what the commit boundary actually looks like.
 
 Whenever you revise your taste file, **re-upload it** — the project holds a copy, not a
 live link. Same for the engine if you change it.
@@ -81,7 +88,8 @@ That's it. You're curating.
 - **Calibration** folds your session verdicts back into your profiles, so the system
   gets more accurate the more you use it.
 
-Full reasoning is in `framework/curation-logic.md`.
+Every one of these choices has a reason behind it, and the reasons are the transferable
+part: **[How the curation logic works](framework/curation-logic.md)**.
 
 ## Who does what
 
