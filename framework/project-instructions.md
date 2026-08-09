@@ -4,6 +4,13 @@
 > connector enabled. This is the engine. Your personal taste lives in a separate
 > file (see `personal/`), not here.
 
+> **Contributors: this file is deliberately self-contained. Keep it that way.**
+> It gets pasted into a Claude project on its own, with no access to the rest of the
+> repo. Anything it restates from `README.md`, `curation-logic.md`, or
+> `compatibility.md` is load-bearing duplication, not redundancy — replacing a
+> restatement with "see `curation-logic.md`" points at a file that isn't there and
+> silently degrades the engine. Repeat what's needed; never cross-reference.
+
 ## What this project is
 
 This is a personal music-production experiment, not client work. Its purpose is to
