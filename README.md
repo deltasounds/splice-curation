@@ -1,9 +1,10 @@
 # Splice Curation
 
-A lightweight framework for spending down a Splice credit balance **selectively and
-fast** — turning stranded credits into a compact, useful sample library before your
-subscription renews. It runs entirely on Splice's official (beta) MCP connector for
-Claude. No browser automation, no workarounds, nothing that touches Splice's terms.
+A lightweight framework for spending a Splice credit balance **selectively**, much
+faster than one-at-a-time downloading, at whatever pace your plan allows. It turns idle
+credits into a compact, useful sample library. It runs entirely on Splice's official
+(beta) MCP connector for Claude. No browser automation, no workarounds, nothing that
+touches Splice's terms.
 
 The idea in one line: **human taste, accelerated mechanics.** You stay the curator.
 The framework accelerates everything around your judgment — searching, triaging,
