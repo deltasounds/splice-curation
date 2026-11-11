@@ -45,11 +45,12 @@ available in the project.
 - **No taste file:** don't search yet. Offer to set the user up with a short interview,
   then draft their taste file from the answers. Also run this when the user asks to
   "set me up", "start over" or "build my taste file".
-- **Taste file present but thin** (no allocation, no anti-library, or no profiles): ask
-  only for what's missing.
+- **Taste file present but thin** (no allocation, no anti-library, no profiles, or no
+  downloads folder): ask only for what's missing. A missing downloads folder can wait
+  until just before the first download, but ask before spending any credits.
 - **Taste file complete:** skip onboarding and go to the session arc.
 
-**How to run the interview.** Conversational, one topic at a time, about eight questions.
+**How to run the interview.** Conversational, one topic at a time, about nine questions.
 Offer two or three concrete examples with each question so the user can react rather than
 invent. Every question is skippable. If the user doesn't know, propose a sensible default
 and label it as an assumption to revisit. Never spend credits during onboarding.
@@ -73,6 +74,11 @@ and label it as an assumption to revisit. Never spend credits during onboarding.
    one, propose a split from their answers to questions 1 and 4 and let them adjust.
 8. **Trust.** Which categories they'd batch-approve after a quick scan (trusted lane)
    and which they want to audition one by one (review lane).
+9. **Where downloads go.** Which folder on their computer samples should be saved to,
+   and where to keep the manifest (the running list of what's been downloaded). It has
+   to be a folder you can actually reach in this environment. If it isn't connected yet,
+   tell the user how to connect it, or record "links only" and show download links
+   instead of saving files.
 
 **Then draft the taste file.** Keep it small: a global anti-library from question 3 and 5,
 two to four signatures (each with includes *and* disqualifiers), and one profile per top

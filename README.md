@@ -66,8 +66,9 @@ material for you and anyone forking it. None of it needs to reach Claude.
    signatures, profiles, anti-library (what your gear already makes, so you never buy
    it) and your own credit split. Two ways in:
    - **Let the project interview you (easiest).** Start a chat in the project and say
-     *"set me up"*. It asks about eight questions (credits and deadline, what you make,
-     your gear, your gaps, your turn-offs, how to split credits) and drafts `my-taste.md`
+     *"set me up"*. It asks about nine questions (credits and deadline, what you make,
+     your gear, your gaps, your turn-offs, how to split credits, where downloads should
+     be saved) and drafts `my-taste.md`
      from your answers. Review it, edit anything that's off, and save the file.
    - **Write it by hand.** Copy [`personal/my-taste.example.md`](personal/my-taste.example.md)
      to `personal/my-taste.md` and fill it in, using

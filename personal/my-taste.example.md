@@ -5,7 +5,7 @@ the public repo (it's gitignored). The public repo ships the engine; your ears s
 yours.
 
 > **Rather not write this by hand?** Load the engine into your project, then start a chat
-> and say *"set me up"*. It interviews you (about eight questions) and drafts this file
+> and say *"set me up"*. It interviews you (about nine questions) and drafts this file
 > for you. You review it, then add it to the project's knowledge.
 
 Start small. A signature or two and two to five profiles is plenty for a first session;
