@@ -54,13 +54,24 @@ material for you and anyone forking it. None of it needs to reach Claude.
    https://splice.com/tools/mcp-server
 2. **Create a dedicated Claude project** for this (not just a chat thread — the project
    is what makes your setup persist).
-3. **Paste [`framework/project-instructions.md`](framework/project-instructions.md)** into the project's custom instructions.
-   That's the engine.
-4. **Write your taste file.** Copy [`personal/my-taste.example.md`](personal/my-taste.example.md) to `personal/my-taste.md`
-   and fill in one signature and one profile using [`framework/profile-format.md`](framework/profile-format.md). Starting
-   from the generic examples in [`examples/profiles/`](examples/profiles/) is fine.
-   [`examples/worked-taste-file.md`](examples/worked-taste-file.md) shows what a
-   developed one looks like — read it for shape, then write your own.
+3. **Put the engine in the project's Instructions.** Open
+   [`framework/project-instructions.md`](framework/project-instructions.md), click the
+   **copy-raw icon** at the top-right of the file view (or open **Raw** and select all) to grab its text, and paste that
+   into your project's **Instructions** box (on the project page, under
+   "Instructions" / "Edit"). That's the engine — the *how*. *(Prefer fewer steps? Upload
+   this file to the project's knowledge alongside step 5 instead. Instructions is the
+   more reliable home for operating rules, but both work.)*
+4. **Write your own taste file — the part only you can do.** Copy
+   [`personal/my-taste.example.md`](personal/my-taste.example.md) to `personal/my-taste.md`
+   and fill in *your* taste: a signature and a profile or two is enough to start — you
+   don't need the whole thing up front, calibration sharpens and grows it as you go. Add
+   *your own* credit/collection-effort allocation (what you most want to collect). Use
+   [`framework/profile-format.md`](framework/profile-format.md) for the format, and the
+   generic examples in [`examples/profiles/`](examples/profiles/) as starting shapes —
+   shapes, **not settings to inherit**. The system runs on taste, and the taste has to be
+   yours, or it will curate someone else's library.
+   [`examples/worked-taste-file.md`](examples/worked-taste-file.md) shows what a developed
+   one looks like — read it for shape, then write your own; don't adopt it.
 5. **Upload that taste file to the project's knowledge.** This step is what makes your
    profiles visible to Claude — without it you have a well-written file that nothing
    reads. (Pasting the profiles into the custom instructions below the engine works too;

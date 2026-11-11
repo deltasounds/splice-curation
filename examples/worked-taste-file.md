@@ -42,6 +42,22 @@ someone who doesn't share the references:
 
 The point is to have these in the ancestry **without sounding like any of them.**
 
+## Session axes (optional)
+
+Some categories span too wide a range to search in one net. Declaring the axes you'll
+slice sessions by — here, tempo bands — keeps each search focused and stops a single query
+returning an unusable spread:
+
+```
+~85–95     hip-hop, broken beat, downtempo
+~120–135   garage / 2-step, techno-adjacent
+~140       half-time: deep dubstep, space bass
+free       ambient, IDM, melodic electronic
+```
+
+You run one band per session, not all at once. Add a section like this only if your
+material has an axis like it — a one-shot library may not need one at all.
+
 ## The collection test
 
 Applied on top of any profile match. A profile filters; this decides.
@@ -94,12 +110,16 @@ Drum one-shots multiply fast; 50 great breaks beat 2,000 one-shots; 300 strange 
 recordings isn't overcollection. Use for priority, never to force percentages.
 
 ```
-50%  Rhythmic material (breaks, drum loops, percussion, one-shots)
-20%  Organic / musical source (instrumental fragments)
-15%  Texture / field / foley
-10%  Vocals (fragments, not songs)
- 5%  Unusual electronic source material
+50%  Rhythmic            breaks, percussion, one-shots         (1, 2)
+20%  Organic / musical   instrumental & tonal fragments        (3, 6)
+15%  Texture / field     field, foley, patina, drones          (5a, 5b, 8)
+10%  Vocals              fragments                             (4)
+ 5%  Electronic / strange  glitch, wildcard                    (7, 9)
 ```
+
+The numbers in brackets are the profiles that feed each share. Tying the mix to profiles
+keeps it honest about coverage — it shows at a glance which profiles have real budget and
+which are starved — and it's what makes the percentages actionable rather than decorative.
 
 ---
 

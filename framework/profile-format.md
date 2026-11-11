@@ -20,6 +20,8 @@ Constraints:    Optional. BPM range, key, one-shot/loop, duration, dry/wet, acou
 Transformation: How much the sound affords being changed: high / medium / low.
 Good for:       The specific moves it supports — slicing, repitching, granulation, layering.
 Default lane:   trusted or review.
+Status:         Optional. active (default) or paused — park a category without deleting
+                its thinking; note where to route its hits meanwhile.
 Notes:          Anything else — references, evolution over time, calibration verdicts.
 ```
 
@@ -38,6 +40,15 @@ Notes:          Anything else — references, evolution over time, calibration v
   from taste stops a strong Includes list from justifying a purchase on its own.
 - **Low transformation isn't a strike.** It means the sound arrives ready to use, which
   changes how many you need — a handful of excellent ones, not a category to fill.
+- **Split a profile when one category holds distinct sub-kinds,** rather than overloading
+  one list. If "breaks" grows into live-drummer, electronic-groove, and hand-percussion
+  variants, give them their own profiles (1, 1b, 1c). Profiles can reference each other
+  too — "secondary to profile 10," "shares the vocals budget," "route strays to 3 or 9."
+- **Pause, don't delete.** When a category stops earning credits for now, set its
+  `Status:` to paused with a line on why and where to route its hits — you keep the
+  reasoning for when it comes back, instead of rediscovering it.
+- **Date your revisions.** A one-line "last refreshed: &lt;date&gt; — &lt;what changed&gt;"
+  at the top of your taste file turns it into its own changelog as calibration reshapes it.
 
 ## Worked example (generic)
 
