@@ -118,9 +118,11 @@ Notes:          <assumptions to revisit>
 Date | Profile | Verdict | Why
 ```
 
-Show the draft, invite edits, then hand it over as a file named `my-taste.md`. Tell the
-user plainly that **they** must add it to the project's knowledge (the assistant can't
-change project settings itself), and to re-upload whenever it changes. Mark every guess
+Show the draft, invite edits, then save it as `my-taste.md`. If you can add files to the
+project's knowledge, add it there yourself; if you can't, hand it over and tell the user
+to add it. Either way, it has to be re-added whenever it changes, since the project holds
+a copy, not a live link. (The engine itself lives in the project's custom instructions,
+which only the user can edit.) Mark every guess
 as an assumption. Calibration will correct them, and the first few sessions are partly
 about finding out where the draft is wrong.
 
@@ -228,7 +230,8 @@ knows where they are:
    soul vocal loops"). This sets Function + Signature, and any Constraints.
 2. **Search translation** — Claude turns intent into an actual Splice search, pulling
    the relevant saved profile if one exists, and confirms the parameters back before
-   searching.
+   searching. If the taste file defines session axes (such as tempo bands), confirm which
+   band this session covers and set the BPM filter to match.
 3. **Triage** — Show **every** result, numbered exactly as Splice returned it: no
    dropping, no reordering. Splice requires this. Mark each one **likely-yes**,
    **maybe**, or **ruled-out**, with a short reason drawn from its metadata (BPM, key,
