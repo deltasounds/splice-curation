@@ -37,7 +37,7 @@ Two files make the round trip:
 | This repo | Goes where | What it does |
 |---|---|---|
 | [`framework/project-instructions.md`](framework/project-instructions.md) | The project's **custom instructions** | The engine — the grammar, lanes, commit boundary, six-beat arc |
-| your filled-in taste file | The project's **knowledge** (uploaded file) | Your signatures and profiles — the thing Claude searches *from* |
+| your taste file (hand-written, or drafted by the onboarding interview) | The project's **knowledge** (uploaded file) | Your signatures, profiles, anti-library and credit split — the thing Claude searches *from* |
 
 Everything else here — the logic doc, the profile format, the examples — is reference
 material for you and anyone forking it. None of it needs to reach Claude.
@@ -61,17 +61,22 @@ material for you and anyone forking it. None of it needs to reach Claude.
    "Instructions" / "Edit"). That's the engine — the *how*. *(Prefer fewer steps? Upload
    this file to the project's knowledge alongside step 5 instead. Instructions is the
    more reliable home for operating rules, but both work.)*
-4. **Write your own taste file — the part only you can do.** Copy
-   [`personal/my-taste.example.md`](personal/my-taste.example.md) to `personal/my-taste.md`
-   and fill in *your* taste: a signature and a profile or two is enough to start — you
-   don't need the whole thing up front, calibration sharpens and grows it as you go. Add
-   *your own* credit/collection-effort allocation (what you most want to collect). Use
-   [`framework/profile-format.md`](framework/profile-format.md) for the format, and the
-   generic examples in [`examples/profiles/`](examples/profiles/) as starting shapes —
-   shapes, **not settings to inherit**. The system runs on taste, and the taste has to be
+4. **Create your own taste file — the part only you can supply.** It holds your
+   signatures, profiles, anti-library (what your gear already makes, so you never buy
+   it) and your own credit split. Two ways in:
+   - **Let the project interview you (easiest).** Start a chat in the project and say
+     *"set me up"*. It asks about eight questions (credits and deadline, what you make,
+     your gear, your gaps, your turn-offs, how to split credits) and drafts `my-taste.md`
+     from your answers. Review it, edit anything that's off, and save the file.
+   - **Write it by hand.** Copy [`personal/my-taste.example.md`](personal/my-taste.example.md)
+     to `personal/my-taste.md` and fill it in, using
+     [`framework/profile-format.md`](framework/profile-format.md) for the format.
+
+   Either way, start small: two to five profiles is plenty, and calibration grows the
+   rest. The generic examples in [`examples/profiles/`](examples/profiles/) and the
+   developed [`examples/worked-taste-file.md`](examples/worked-taste-file.md) show
+   shape, **not settings to inherit**. The system runs on taste, and the taste has to be
    yours, or it will curate someone else's library.
-   [`examples/worked-taste-file.md`](examples/worked-taste-file.md) shows what a developed
-   one looks like — read it for shape, then write your own; don't adopt it.
 5. **Upload that taste file to the project's knowledge.** This step is what makes your
    profiles visible to Claude — without it you have a well-written file that nothing
    reads. (Pasting the profiles into the custom instructions below the engine works too;
@@ -87,6 +92,25 @@ Whenever you revise your taste file, **re-upload it** — the project holds a co
 live link. Same for the engine if you change it.
 
 That's it. You're curating.
+
+### Running it outside Claude
+
+The framework itself isn't Claude-specific. The engine is a system prompt and the taste
+file is a context document, so any capable assistant can follow them. What sets the limit
+is the **Splice connector**: the workflow needs a client that can connect to Splice's MCP
+server and spend credits. Splice launched it as a Claude integration, and that's the
+setup this repo documents and has been tested on. Other clients aren't confirmed.
+
+If your assistant supports the official Splice connector, the pieces map across:
+
+| Here (Claude Projects) | Elsewhere |
+|---|---|
+| Project **Instructions** ← the engine | The tool's system / custom instructions |
+| Project **Knowledge** ← your taste file | The tool's uploaded files or persistent context |
+| A **project** (setup persists) | Whatever keeps instructions and files across chats. Without one, paste both in at the start of each chat. |
+
+Check [splice.com/tools/mcp-server](https://splice.com/tools/mcp-server) for which clients
+the connector currently supports before you start.
 
 ## How it works (the short version)
 

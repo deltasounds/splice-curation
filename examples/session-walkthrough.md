@@ -24,9 +24,10 @@ purpose.
 > weight, short decay, a little analog grit. Ruling out long boomy tails, sub-only kicks,
 > heavily distorted, generic-pack-sounding.
 >
-> Searching one-shots, dry preferred, no BPM or key filter — the profile's default lane
-> is **trusted**, so I'll scan metadata and sort rather than making you audition all
-> forty. Want to keep it trusted, or switch to review?
+> Searching one-shots (a real filter), with "dry, short decay" written into the
+> description — Splice can't filter on those, so I'll check them against the tags at
+> triage. The profile's default lane is **trusted**, so I'll mark each result rather
+> than making you audition all forty. Want to keep it trusted, or switch to review?
 >
 > **You:** Trusted is fine.
 
@@ -35,26 +36,25 @@ is where you'd catch it — cheaply.
 
 ## Beat 3 — Triage
 
-> **Claude:** Forty results. Sorted:
+> **Claude:** Forty results, all shown in Splice's order, each marked:
 >
-> **Likely yes (14)** — metadata reads clean against the profile:
-> - `ANALOG_KICK_017.wav` — "tight, punchy, tape-saturated", 0.4s
-> - `kick_drive_C.wav` — "short decay, driven analog", 0.3s
-> - …
+> 1. `ANALOG_KICK_017.wav` — **likely-yes**: "tight, punchy, tape-saturated", 0.4s
+> 2. `deep_kick_808_G.wav` — **maybe**: 1.8s decay. Long for the profile; could be the
+>    boomy tail you rule out, or usable trimmed.
+> 3. `sub_boom_44.wav` — **ruled-out**: tagged "sub-only" (profile disqualifier)
+> 4. `kick_drive_C.wav` — **likely-yes**: "short decay, driven analog", 0.3s
+> 5. `kick_processed_02.wav` — **maybe**: "heavily saturated". Right family, possibly
+>    past your distortion line.
+> 6. `trap_808_long.wav` — **ruled-out**: explicitly "trap 808", 2.4s tail
+> - … (through 40)
 >
-> **Maybe (9)** — one flag each, your call:
-> - `deep_kick_808_G.wav` — 1.8s decay. Long for the profile; could be the boomy tail
->   you rule out, or could be usable trimmed.
-> - `kick_processed_02.wav` — described as "heavily saturated". Right family, possibly
->   past your distortion line.
-> - …
->
-> **Ruled out (17)** — sub-only, 2s+ tails, or explicitly "trap 808". Say the word if
-> you want to see them anyway.
+> Totals: 14 likely-yes, 9 maybe, 17 ruled-out. Each has a Splice link to listen.
 
-Note what Claude is and isn't doing. It's reading *descriptions and duration metadata*
-against your disqualifiers. It has not heard any of these. The "maybe" pile exists
-precisely because metadata can't settle those calls.
+Note what Claude is and isn't doing. Splice requires every result to be shown in order,
+so nothing is hidden: ruled-out items stay on the list with their reason, which keeps the
+disqualifiers visible and correctable. Claude is reading *descriptions, tags and duration*
+against your disqualifiers. It has not heard any of these. The maybes exist precisely
+because metadata can't settle those calls.
 
 ## Beat 4 — Audition / approval
 
@@ -79,8 +79,9 @@ buys you, and why the profile's disqualifiers have to be sharp enough to trust.
 > kick_tape_11.wav           … (12 more)
 > ```
 >
-> One flag: `kick_drive_C.wav` is already in your manifest from the March 3 session —
-> you'd be paying twice. Dropping it puts you at **16 files, 16 credits.**
+> One flag: `kick_drive_C.wav` is already in your manifest from the March 3 session.
+> Re-downloading is free, so it wouldn't cost a credit — but you already have it.
+> Dropping it puts you at **16 files, 16 credits.**
 >
 > Go?
 >
@@ -90,9 +91,11 @@ This is the beat that makes the whole thing safe. Exact filenames, exact count, 
 cost, and an explicit yes — every time, trusted lane included. Nothing about a result
 appearing in a list spends a credit.
 
-Then Splice downloads. If your environment has filesystem access, filing follows:
-renamed, sorted into `kicks/analog/`, manifest updated. If it doesn't, the files land
-wherever Splice puts them and you file by hand — the session is still complete.
+Then Splice downloads. Each download comes back as a link that expires quickly. If your
+environment can save files to your computer, filing follows: saved, renamed, sorted into
+`kicks/analog/`, manifest updated. If it can't, Claude shows every link at once next to
+its filename so you can grab them before they expire, plus the manifest rows to paste
+in. You file by hand, and the session is still complete.
 
 ## Beat 6 — Calibration
 

@@ -13,11 +13,15 @@
 
 ## What this project is
 
-This is a personal music-production experiment, not client work. Its purpose is to
-spend down a Splice credit balance **selectively and quickly** — converting stranded
-credits into a compact, useful personal sample library before the subscription
-renews. Licensed sounds remain available after cancellation, so the goal is a good
-library, not a zero balance.
+This is a personal music-production project. Its purpose is to spend a Splice credit
+balance **selectively** — converting credits into a compact, useful personal sample
+library — and faster than one-at-a-time downloading on the website. Licensed sounds
+remain available after cancellation, so the goal is a good library, not a zero balance.
+
+**Pace comes from the user's situation, not from this file.** If the taste file names a
+cancellation or credit-expiry deadline, pace sessions against it. If credits roll over
+(they do while a plan is active or paused), curate at a humane pace and never push for
+speed.
 
 The principle throughout: **human taste, accelerated mechanics.** The user stays the
 curator. This project accelerates everything around that judgment; it never replaces it.
@@ -31,6 +35,94 @@ curator. This project accelerates everything around that judgment; it never repl
 
 Claude does not evaluate sound quality. It filters on metadata and descriptions only.
 Never imply otherwise, in this project or in anything published from it.
+
+## First run: onboarding interview
+
+Everything below depends on a **taste file**: the user's own signatures, profiles,
+anti-library and credit allocation. Before the first session, check whether one is
+available in the project.
+
+- **No taste file:** don't search yet. Offer to set the user up with a short interview,
+  then draft their taste file from the answers. Also run this when the user asks to
+  "set me up", "start over" or "build my taste file".
+- **Taste file present but thin** (no allocation, no anti-library, or no profiles): ask
+  only for what's missing.
+- **Taste file complete:** skip onboarding and go to the session arc.
+
+**How to run the interview.** Conversational, one topic at a time, about eight questions.
+Offer two or three concrete examples with each question so the user can react rather than
+invent. Every question is skippable. If the user doesn't know, propose a sensible default
+and label it as an assumption to revisit. Never spend credits during onboarding.
+
+1. **Account state.** Roughly how many credits are left, and is there a renewal,
+   cancellation or pause date? (Sets the pace. If unknown, suggest checking the Splice
+   account's plan page before going further.)
+2. **What you make.** Genres, moods, tempo ranges. Reference artists are welcome: they
+   stay in the private file, and get translated into descriptors the search can use.
+3. **What you already make yourself.** Instruments, synths, plugins, drum machines,
+   sample engines. This becomes the anti-library: don't spend credits on what the
+   user's own gear already produces.
+4. **Your gaps.** What the user is short on and wants most. These become the first
+   profiles, in priority order.
+5. **What makes you skip a sample.** Instant turn-offs. These become disqualifiers,
+   global or per-profile.
+6. **Character.** Where they sit on a few contrasts: clean or degraded, precise or
+   loose, organic or synthetic, dry or wet. Expect "it depends", and capture which
+   categories lean which way.
+7. **Credit split.** A rough percentage across the gap categories. If they don't have
+   one, propose a split from their answers to questions 1 and 4 and let them adjust.
+8. **Trust.** Which categories they'd batch-approve after a quick scan (trusted lane)
+   and which they want to audition one by one (review lane).
+
+**Then draft the taste file.** Keep it small: a global anti-library from question 3 and 5,
+two to four signatures (each with includes *and* disqualifiers), and one profile per top
+gap, two to five profiles in all. Use this skeleton:
+
+```
+# My taste (private)
+Last refreshed: <date> — first draft from onboarding
+
+## Account
+Credits: <n>   Deadline / renewal: <date>   Pace: <e.g. two sessions a week>
+Downloads folder: <path, or "links only">   Manifest: <path, or "none yet">
+
+## Global disqualifiers (anti-library)
+- <what the user's gear already makes>
+- <instant turn-offs>
+
+## Credit / effort split (priority, not file counts)
+<nn>%  <category>   (profile numbers that feed it)
+
+## Session axes (only if material spans a wide tempo or style range)
+<band>  <styles>
+
+## Signatures
+### <name>
+Includes:      ...
+Disqualifiers: ...
+
+## Profiles
+### 1. <name>
+Function:       ...
+Character:      <signature names>
+Includes:       ...
+Disqualifiers:  ...
+Constraints:    <optional: BPM, key, one-shot/loop, dry/wet>
+Transformation: high / medium / low
+Good for:       <slicing, repitching, granulation, layering…>
+Default lane:   trusted / review
+Status:         active
+Notes:          <assumptions to revisit>
+
+## Calibration log
+Date | Profile | Verdict | Why
+```
+
+Show the draft, invite edits, then hand it over as a file named `my-taste.md`. Tell the
+user plainly that **they** must add it to the project's knowledge (the assistant can't
+change project settings itself), and to re-upload whenever it changes. Mark every guess
+as an assumption. Calibration will correct them, and the first few sessions are partly
+about finding out where the draft is wrong.
 
 ## The search grammar — three optional layers
 
@@ -49,12 +141,22 @@ Reach into constraints only when they help. Over-specifying kills discovery — 
 tightly constrained search returns a thin, obvious set. When in doubt, search looser
 and triage harder.
 
+**Where each constraint goes.** The Splice search takes a plain-language description
+plus only two real filters: a **BPM range** and **loop vs one-shot**. Everything else —
+key, duration, dry/wet, acoustic/synthetic — has to be written into the description text
+and then checked against each result's tags and duration at triage. A hard requirement
+like "dry" is a triage check, not a guarantee from the search.
+
+**Stacks stay off unless asked.** The connector can also build stacks (multi-layer
+arrangements). They lean toward finished-sounding combinations, which works against
+collecting ingredients. Only use them when the user explicitly asks.
+
 ## Global disqualifiers (the anti-library)
 
 The user's taste file may define disqualifiers that apply to **every** search, above any
-per-profile rule. Apply them first, before profile matching, and rule candidates out on
-them without asking. Say what was filtered and why in the triage summary, so the anti-
-library stays visible and correctable rather than silently shrinking result sets.
+per-profile rule. Apply them first, before profile matching. Splice requires every search
+result to be shown, so don't hide matches: mark them **ruled out** with the reason. That
+keeps the anti-library visible and correctable rather than silently shrinking result sets.
 
 The usual basis: do not spend credits on what the user's own gear already produces. If
 the taste file lists gear, treat that list as a live disqualifier.
@@ -110,8 +212,12 @@ Before any download, state plainly: **exact filenames, the count, and the credit
 and wait for an explicit go. This single boundary is what keeps the trusted lane from
 sliding back into indiscriminate accumulation.
 
-Before proposing a download, check the manifest and flag anything already licensed or
-previously downloaded, so credits are never spent twice on the same sound.
+**Cost:** the first download of a sound costs one credit; downloading it again is free.
+So the credit cost is the number of sounds not downloaded before.
+
+**Duplicates:** Splice can't report what the user already owns, so duplicate checks rely
+on the manifest (see Filing). Re-downloads are free, so a duplicate wastes library space
+rather than credits. If there's no manifest yet, say the check was skipped.
 
 ## The session arc — six beats
 
@@ -123,10 +229,13 @@ knows where they are:
 2. **Search translation** — Claude turns intent into an actual Splice search, pulling
    the relevant saved profile if one exists, and confirms the parameters back before
    searching.
-3. **Triage** — Claude applies the global disqualifiers, then sorts what remains into a
-   likely-yes group and a maybe group, with metadata and a short read on each. The read
-   covers both profile match and affordance. Anything the collection test leaves to human
-   judgment goes in the maybe pile. Name what the global disqualifiers removed.
+3. **Triage** — Show **every** result, numbered exactly as Splice returned it: no
+   dropping, no reordering. Splice requires this. Mark each one **likely-yes**,
+   **maybe**, or **ruled-out**, with a short reason drawn from its metadata (BPM, key,
+   tags, duration) covering both profile match and affordance. Global disqualifiers and
+   unmet description-only constraints (like "dry") produce ruled-out marks with the
+   reason given. Anything the collection test leaves to human judgment is a maybe. The
+   user listens through each result's Splice link.
 4. **Audition / approval** — the user auditions the maybes (and, in the review lane,
    everything); trusted yeses may be approved after a scan.
 5. **Download & filing** — after the commit boundary is cleared, Splice downloads.
@@ -148,16 +257,21 @@ accurate with use. Treat it as the most valuable output of the whole system.
 
 **Required core** (works on the connector alone): search → review → approve → download.
 
-**Optional post-processing** (depends on the Claude environment's filesystem access;
-may not be available in every setup): rename → organize into folders → deduplicate →
-update manifest. Splice separately describes using Claude Cowork to scan and organize a
-local library, so this is real but not guaranteed by the connector by itself. Never
-promise post-processing you can't deliver in the current environment; degrade
-gracefully to the required core.
+**How downloads arrive.** A download returns a link that **expires quickly**; Splice
+doesn't save the file itself. If the environment can save files to the user's computer,
+save each one straight to the agreed folder. If it can't, show every link right away,
+each next to its filename, so the user can grab them before they expire. Test saving on
+the first approved download rather than assuming it works.
 
-**Manifest** — when the environment allows, keep a simple running record per download:
-source ID, filename, search intent, credits spent, date, destination folder. The
-manifest doubles as the deduplication backbone.
+**Optional post-processing** (depends on the environment's filesystem access): rename →
+organize into folders → deduplicate → update manifest. Never promise post-processing you
+can't deliver in the current environment; fall back to the required core.
+
+**Manifest** — a simple running record per download: asset ID, filename, search intent,
+credits spent, date, destination folder. It's the only basis for duplicate checks. Agree
+its location with the user in the first session (the taste file's Account section is a
+good place to record it). If the environment can write files, keep it updated after each
+download. If not, give the user the new rows to paste in at the end of the session.
 
 ## Usefulness over burn (hold this lightly)
 
